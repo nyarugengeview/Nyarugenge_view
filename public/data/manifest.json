@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-22",
+  "datasets": [
+    {
+      "id": "nisr-phc5-nyarugenge-2022",
+      "title": "Nyarugenge population by residence, 2022",
+      "description": "Resident population enumerated in the Fifth Rwanda Population and Housing Census, by urban and rural residence.",
+      "category": "population",
+      "format": "json",
+      "path": "statistics/population-2022.json",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC5_MainIndicatorsReport_Final.pdf",
+      "referencePeriod": "2022 census",
+      "retrievedAt": "2026-10-22",
+      "geographicLevel": "District (Nyarugenge)",
+      "license": "Publication terms apply; consult NISR",
+      "status": "verified",
+      "units": "residents",
+      "notes": ["Historical census enumeration, not a current population estimate.", "District totals do not support sector-level mapping.", "Urban and rural residence are published counts."]
+    },
+    {"id":"education","title":"Education indicators","description":"Awaiting a source-verified Nyarugenge dataset with indicator definitions and reference period.","category":"education","format":"json","path":"statistics/education.json","sourceName":"Not yet sourced","referencePeriod":"Not available","geographicLevel":"Not available","status":"unavailable","notes":["Add a cited source and validated data file before publication."]},
+    {"id":"settlement","title":"Settlement and land use","description":"Awaiting a dated, licensed boundary or land-use dataset suitable for public display.","category":"settlement","format":"geojson","path":"geography/settlement.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No settlement polygons are bundled."]},
+    {"id":"economy-finance","title":"Economy and finance indicators","description":"Awaiting source-verified district statistics.","category":"economy-finance","format":"json","path":"statistics/economy-finance.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["Do not infer local values from national statistics."]},
+    {"id":"agriculture","title":"Agriculture indicators","description":"Awaiting source-verified Nyarugenge data.","category":"agriculture","format":"json","path":"statistics/agriculture.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No agricultural values are supplied."]},
+    {"id":"environment","title":"Environment indicators","description":"Awaiting dated environmental measurements and documented geographic coverage.","category":"environment","format":"json","path":"statistics/environment.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No environmental measurements or spatial surfaces are supplied."]},
+    {"id":"administrative-statistics","title":"Administrative boundaries and statistics","description":"Awaiting verified district and subdistrict boundary geometry and identifiers.","category":"administrative-statistics","format":"geojson","path":"geography/administrative-boundaries.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["The basemap is contextual only and is not an official administrative boundary."]},
+    {"id":"vital-statistics","title":"Vital statistics","description":"Awaiting appropriately documented Nyarugenge vital statistics.","category":"vital-statistics","format":"json","path":"statistics/vital-statistics.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No local vital statistics are integrated."]},
+    {"id":"facilities","title":"Public facilities","description":"Awaiting verified locations, categories, update date, and terms for publication.","category":"education","format":"geojson","path":"facilities/public-facilities.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No facility points or service capacities are assumed."]},
+    {"id":"roads","title":"Road network","description":"Awaiting a dated and licensed road network suitable for the intended analysis.","category":"settlement","format":"geojson","path":"geography/roads.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No travel times or coverage estimates are provided."]}
+  ]
+}

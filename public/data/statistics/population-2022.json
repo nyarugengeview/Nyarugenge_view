@@ -1,0 +1,13 @@
+{
+  "datasetId": "nisr-phc5-nyarugenge-2022",
+  "geography": {"name":"Nyarugenge","level":"District"},
+  "referencePeriod":"2022 census",
+  "units":"residents",
+  "indicators":[
+    {"id":"population-total","label":"Resident population","value":374319,"unit":"residents","geographicLevel":"District","status":"observed"},
+    {"id":"population-urban","label":"Urban residents","value":315899,"unit":"residents","geographicLevel":"District","status":"observed"},
+    {"id":"population-rural","label":"Rural residents","value":58420,"unit":"residents","geographicLevel":"District","status":"observed"},
+    {"id":"share-urban","label":"Urban share","value":84.4,"unit":"%","geographicLevel":"District","status":"derived","formula":"315899 / 374319 * 100; rounded to 1 decimal place"},
+    {"id":"share-rural","label":"Rural share","value":15.6,"unit":"%","geographicLevel":"District","status":"derived","formula":"58420 / 374319 * 100; rounded to 1 decimal place"}
+  ]
+}

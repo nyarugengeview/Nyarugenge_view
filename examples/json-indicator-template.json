@@ -1,0 +1,7 @@
+{
+  "datasetId": "replace-with-manifest-id",
+  "geography": { "name": "replace-with-published-geography", "level": "replace-with-published-level" },
+  "referencePeriod": "replace-with-published-period",
+  "units": "replace-with-unit",
+  "indicators": []
+}

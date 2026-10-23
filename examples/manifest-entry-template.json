@@ -1,0 +1,14 @@
+{
+  "id": "replace-with-stable-id",
+  "title": "replace-with-published-dataset-title",
+  "description": "Describe its coverage and limitations.",
+  "category": "population",
+  "format": "json",
+  "path": "statistics/replace-with-file.json",
+  "sourceName": "replace-with-publishing-institution",
+  "referencePeriod": "replace-with-source-period",
+  "geographicLevel": "replace-with-source-geography",
+  "license": "State the publisher's actual license or terms",
+  "status": "pending-review",
+  "notes": ["Template only; not a dataset or a real source citation."]
+}
