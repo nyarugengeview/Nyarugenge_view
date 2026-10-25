@@ -1,6 +1,6 @@
 # Nyarugenge View
 
-A mobile-first, static civic data application for Nyarugenge District. The site only presents the verified 2022 NISR district population dataset bundled here; all other indicators and official geometry are marked as awaiting data.
+A mobile-first, static civic data application for Nyarugenge District. The site integrates NISR 2022 and 2012 census population tables and 2023–2032 projections. NISR-derived boundary candidates and user-supplied clipped layers remain hidden until vintage, reuse rights, and other review requirements are resolved.
 
 ## Run locally
 
@@ -23,11 +23,11 @@ pnpm build
 pnpm preview
 ```
 
-`pnpm validate:data` checks the manifest, provenance requirements for verified entries, paths, JSON, GeoJSON structure and coordinate ranges, and the bundled population indicator schema. The app has Vitest unit tests for validation and CSV parsing.
+`pnpm validate:data` checks the manifest, provenance requirements for verified entries, paths, JSON, GeoJSON structure and coordinate ranges, and the bundled population indicator schema. The app has Vitest unit tests for validation and CSV parsing. The Python acquisition, extraction, and spatial workflow is in [`docs/DATA-PIPELINE.md`](docs/DATA-PIPELINE.md); dependencies are listed in `requirements-data.txt`.
 
 ## Data architecture
 
-Public files live under `public/data/`, with metadata registered in `public/data/manifest.json`. `src/data/registry.ts` holds category definitions and manifest loading; `loaders.ts` reads CSV, JSON, and GeoJSON at runtime; `validation.ts` exposes reusable format and tabular checks. Unavailable manifest entries are metadata-only and are not fetched. A failed fetch or invalid file is shown as a data error, never substituted with demonstration values.
+Public files live under `public/data/`, with metadata registered in `public/data/manifest.json`. `src/data/registry.ts` holds category definitions and manifest loading; `loaders.ts` reads CSV, JSON, and GeoJSON at runtime; `validation.ts` exposes reusable format and tabular checks. Only verified datasets with valid files are loaded into the map and category views; pending-review and unavailable entries remain in the data catalog. Original archives belong in `data/input/`; acquired source files and local processed review outputs are Git-ignored. Approved derivatives are moved to `public/data/` only after source, privacy, and licensing review. A failed fetch or invalid file is shown as a data error, never substituted with demonstration values.
 
 ### Add or update a CSV dataset
 
@@ -92,7 +92,7 @@ The number above is a schema example only; it is not real Nyarugenge data and mu
 
 ### JSON manifest fields and availability
 
-Supported status values are `verified`, `pending-review`, and `unavailable`. Only verified datasets with valid files are loaded into indicators or the map; pending-review and unavailable entries remain visible in the data catalog. `unavailable` is useful for documenting a known missing input; no file is expected. Supported formats are CSV, JSON, and GeoJSON. Excel should be converted to a documented CSV/JSON export; shapefiles should be converted to GeoJSON while preserving CRS and attributes. Do not silently discard invalid records during conversion.
+Supported lifecycle status values are `discovered`, `downloaded`, `processed`, `pending-review`, `verified`, `unavailable`, and `restricted`. Only verified datasets with valid files are loaded into indicators or the map; pending-review and unavailable entries remain visible in the data catalog. `unavailable` is useful for documenting a known missing input; no file is expected. Supported formats are CSV, JSON, and GeoJSON. Excel should be converted to a documented CSV/JSON export; shapefiles should be converted to GeoJSON while preserving CRS and attributes. Do not silently discard invalid records during conversion.
 
 Run the validator and tests after each import:
 
@@ -107,19 +107,19 @@ Review all reported errors, then preview locally with `pnpm dev`. Blank, clearly
 
 ## Data included and limitations
 
-`nisr-phc5-nyarugenge-2022` contains the 2022 NISR census counts for Nyarugenge: 374,319 residents, 315,899 urban, and 58,420 rural. The urban and rural shares (84.4%, 15.6%) are derived from those counts and rounded to one decimal. Source: [NISR, Fifth Rwanda Population and Housing Census 2022 Main Indicators Report](https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC5_MainIndicatorsReport_Final.pdf). These are historical district-level figures, not current estimates. No sector-level population surface is supplied.
+The 2022 NISR census population for Nyarugenge is 374,319 residents: 315,899 urban (84.4%) and 58,420 rural (15.6%). Sector tables are published for 2022 and 2012 and displayed as separate snapshots; comparability is not assumed. District projections from 2023 through 2032 are labelled as projections. See [`docs/DATA-INVENTORY.md`](docs/DATA-INVENTORY.md) for table/page references and reconciliation results.
 
-OpenStreetMap is used as the interactive contextual basemap with attribution. It is not an official district boundary. No official boundary geometry, facility register, road analysis, service capacity, or travel-time dataset is bundled. Education, settlement, economy and finance, agriculture, environment, administrative statistics, and vital statistics are explicitly unavailable. The approximate center marker is only for map orientation.
+OpenStreetMap is the contextual basemap with attribution. A public NISR `village_boundary` service returned geometry and administrative identifiers including Nyarugenge district ID 11, but the accessible REST metadata does not state vintage or license. NISR Hub separately lists `Village_Boundary_2022`; its direct REST layer and query returned HTTP 500 during this run. Derived boundary candidates are pending review and hidden from the map. Supplied archive layers were clipped for local review but not made public. See [`docs/DATA-GAPS.md`](docs/DATA-GAPS.md).
 
 ## Publish on GitHub Pages
 
-The included `.github/workflows/deploy.yml` builds, validates, and publishes the `main` branch to GitHub Pages. Its base path is configured for this repository, `Nyarugenge_view`. If the repository name changes, update the `base` value in `vite.config.ts` to `'/<repository-name>/'`. A custom domain may use `'/'` instead.
+The included `.github/workflows/deploy.yml` builds, validates, tests, and publishes the `main` branch to GitHub Pages. This checkout's existing `origin` is `https://github.com/nyarugengeview/Nyarugenge_view.git`, so `vite.config.ts` uses the repository subpath `/Nyarugenge_view/` in GitHub Actions. If you publish under a different repository name, update that base path to `/<actual-repository-name>/`. A custom domain may use `/` instead.
 
-1. Create a GitHub repository and push this project to its `main` branch.
-2. In repository **Settings → Pages → Build and deployment**, select **GitHub Actions**.
-3. Ensure Actions are enabled. The workflow runs checks and deploys when a commit reaches `main` or when manually dispatched.
-4. Find the public URL in the workflow deployment environment or repository Pages settings after the deployment succeeds.
-5. Verify the homepage, a nested hash route, data manifest, map tile attribution, and mobile layout at the deployed URL.
+1. This project already has a GitHub remote. Review `git remote -v` and `git status` before publishing; do not create a second repository unless you intentionally choose a new name and update `vite.config.ts`.
+2. Review the staged file list and commit the intended application changes to `main`, then push to the existing `origin` remote.
+3. In repository **Settings → Pages → Build and deployment**, select **GitHub Actions**. Ensure Actions are enabled.
+4. The workflow runs checks and deploys when a commit reaches `main` or when manually dispatched. No deployment is claimed until the workflow succeeds.
+5. After deployment, use the URL shown by the workflow's `github-pages` environment or the repository Pages settings. Verify the homepage, a nested hash route, data manifest, map tile attribution, and mobile layout there.
 
 Client routes use URL hashes (`#/population`, `#/map?layer=...`) so direct navigation and refresh work on static hosts without server rewrites. No deployment has been performed from this workspace.
 

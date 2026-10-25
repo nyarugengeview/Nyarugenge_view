@@ -13,11 +13,11 @@ for(const [i,d] of (manifest.datasets??[]).entries()){
  if(!d.id||ids.has(d.id))issue(`${at}.id`,d.id?'duplicate id':'required'); else ids.add(d.id);
  for(const f of ['title','description','sourceName','path'])if(typeof d[f]!=='string'||!d[f].trim())issue(`${at}.${f}`,'required non-empty string');
  if(!['csv','json','geojson'].includes(d.format))issue(`${at}.format`,'must be csv, json, or geojson');
- if(!['verified','pending-review','unavailable'].includes(d.status))issue(`${at}.status`,'invalid status');
+ if(!['discovered','downloaded','processed','pending-review','verified','unavailable','restricted'].includes(d.status))issue(`${at}.status`,'invalid lifecycle status');
  if(d.status==='verified'&&(!d.sourceUrl||!d.referencePeriod||!d.geographicLevel))issue(at,'verified datasets require sourceUrl, referencePeriod, and geographicLevel');
  if(d.sourceUrl&&!d.sourceUrl.startsWith('https://'))issue(`${at}.sourceUrl`,'must use HTTPS');
  if(path.isAbsolute(d.path)||d.path.split(/[\\/]/).includes('..'))issue(`${at}.path`,'path must remain inside public/data');
- if(d.status==='unavailable')continue;
+ if(d.status!=='verified')continue;
  const full=path.join(root,'public/data',d.path);
  if(!fs.existsSync(full)){issue(`${at}.path`,`file not found: ${d.path}`);continue;}
  const stat=fs.statSync(full);if(stat.size>25*1024*1024)issue(`${at}.path`,'file exceeds default 25 MB limit');

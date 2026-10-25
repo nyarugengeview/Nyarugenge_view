@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-10-23T15:34:07.269635+00:00",
+  "sources": [
+    {
+      "title": "Nyarugenge Population and Housing Census 2022 District Profile",
+      "url": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
+      "access": "downloaded; PDF text tables machine-extracted",
+      "referencePeriod": "2022 census",
+      "outputs": [
+        "population-sectors-2022.json"
+      ],
+      "license": "No explicit reuse license found on the attachment page; linked to NISR source and attributed."
+    },
+    {
+      "title": "Nyarugenge Population and Housing Census 2012 District Profile",
+      "url": "https://statistics.gov.rw/sites/default/files/2025-06/Nyarugenge_RPHC4_District_Profile.pdf",
+      "access": "downloaded; PDF text tables machine-extracted",
+      "referencePeriod": "2012 census",
+      "outputs": [
+        "population-sectors-2012.json"
+      ],
+      "license": "No explicit reuse license found on the attachment page; linked to NISR source and attributed."
+    },
+    {
+      "title": "Nyarugenge Subnational Population Projections 2023–2032",
+      "url": "https://statistics.gov.rw/sites/default/files/2025-06/1.1%20Nyarugenge_single_age.xlsx",
+      "access": "downloaded; XLSX values extracted",
+      "referencePeriod": "2023–2032",
+      "outputs": [
+        "population-projections-2023-2032.json"
+      ],
+      "license": "No explicit reuse license found on the attachment page; linked to NISR source and attributed."
+    },
+    {
+      "title": "Gender Statistics Profile: Nyarugenge",
+      "url": "https://statistics.gov.rw/sites/default/files/2025-08/Gender%20Statistics%20Profile%20Report%20Nyarugenge.pdf",
+      "access": "downloaded; machine-readable tables extracted and checked",
+      "referencePeriod": "2022 census tables",
+      "outputs": [
+        "population-gender-profile-2022.csv"
+      ],
+      "tables": [
+        "Table 1, printed p. 17 / PDF p. 18",
+        "Table 2, printed p. 19 / PDF p. 20",
+        "Table 3, printed p. 19 / PDF p. 20"
+      ],
+      "license": "No explicit reuse license found on the attachment page; linked to NISR source and attributed."
+    }
+  ],
+  "validation": {
+    "2022SectorTotals": {
+      "population": 374319,
+      "male": 195780,
+      "female": 178539,
+      "urban": 315899,
+      "rural": 58420
+    },
+    "2012SectorTotals": {
+      "population": 284561,
+      "male": 148132,
+      "female": 136429,
+      "urban": 214020,
+      "rural": 70541
+    },
+    "projectionYears": [
+      2023,
+      2032
+    ],
+    "projectionTotals": [
+      383348,
+      477324
+    ],
+    "genderProfileRows": 34
+  }
+}

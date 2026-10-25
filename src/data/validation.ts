@@ -14,7 +14,8 @@ export function validateManifest(value: unknown): ValidationIssue[] {
     else if (ids.has(d.id)) issues.push({ path: `${p}.id`, message: `Duplicate dataset ID: ${d.id}.` }); else ids.add(d.id);
     for (const field of ['title', 'description', 'sourceName', 'path'] as const) if (!d[field] || typeof d[field] !== 'string') issues.push({ path: `${p}.${field}`, message: 'A non-empty string is required.' });
     if (!formats.includes(String(d.format))) issues.push({ path: `${p}.format`, message: 'Format must be csv, json, or geojson.' });
-    if (!['verified', 'pending-review', 'unavailable'].includes(String(d.status))) issues.push({ path: `${p}.status`, message: 'Status must be verified, pending-review, or unavailable.' });
+    const allowedStatuses = ['discovered', 'downloaded', 'processed', 'pending-review', 'verified', 'unavailable', 'restricted'];
+    if (!allowedStatuses.includes(String(d.status))) issues.push({ path: `${p}.status`, message: `Status must be one of: ${allowedStatuses.join(', ')}.` });
     if (d.status === 'verified' && (!d.sourceUrl || !d.referencePeriod || !d.geographicLevel)) issues.push({ path: p, message: 'Verified datasets need sourceUrl, referencePeriod, and geographicLevel.' });
     if (d.sourceUrl && !/^https:\/\//i.test(d.sourceUrl)) issues.push({ path: `${p}.sourceUrl`, message: 'Source links must use HTTPS.' });
     if (typeof d.path === 'string' && (d.path.startsWith('/') || d.path.includes('..'))) issues.push({ path: `${p}.path`, message: 'Path must stay inside public/data and cannot contain traversal segments.' });

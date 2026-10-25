@@ -23,7 +23,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run typecheck && pnpm run validate:data && pnpm run build
+      - run: pnpm run typecheck && pnpm run validate:data && pnpm run test && pnpm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

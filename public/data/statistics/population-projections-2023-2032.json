@@ -1,0 +1,85 @@
+{
+  "datasetId": "nisr-nyarugenge-population-projections-2023-2032",
+  "title": "Projected resident population by sex",
+  "referencePeriod": "2023–2032 projections",
+  "geography": {
+    "name": "Nyarugenge",
+    "level": "District"
+  },
+  "sourceDocument": {
+    "title": "Subnational Population Projections (2023–2032): Nyarugenge",
+    "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-06/1.1%20Nyarugenge_single_age.xlsx",
+    "sheet": "Nyarugenge",
+    "table": "Distribution of the Resident Population by single age and by sex"
+  },
+  "units": "residents",
+  "series": [
+    {
+      "year": 2023,
+      "total": 383348,
+      "male": 200605,
+      "female": 182743
+    },
+    {
+      "year": 2024,
+      "total": 394014,
+      "male": 206359,
+      "female": 187655
+    },
+    {
+      "year": 2025,
+      "total": 404639,
+      "male": 212103,
+      "female": 192536
+    },
+    {
+      "year": 2026,
+      "total": 415174,
+      "male": 217815,
+      "female": 197359
+    },
+    {
+      "year": 2027,
+      "total": 425676,
+      "male": 223556,
+      "female": 202120
+    },
+    {
+      "year": 2028,
+      "total": 436203,
+      "male": 229363,
+      "female": 206840
+    },
+    {
+      "year": 2029,
+      "total": 446697,
+      "male": 235192,
+      "female": 211505
+    },
+    {
+      "year": 2030,
+      "total": 457046,
+      "male": 240956,
+      "female": 216090
+    },
+    {
+      "year": 2031,
+      "total": 467238,
+      "male": 246656,
+      "female": 220582
+    },
+    {
+      "year": 2032,
+      "total": 477324,
+      "male": 252343,
+      "female": 224981
+    }
+  ],
+  "notes": [
+    "Projected values, not observed census counts.",
+    "The source workbook cites the Rwanda Population and Housing Census (NISR 2022) as its source."
+  ],
+  "retrievedAt": "2026-10-23",
+  "sourceOrganization": "National Institute of Statistics of Rwanda (NISR)",
+  "sourceUrl": "https://statistics.gov.rw/district-statistics/kigali-city"
+}

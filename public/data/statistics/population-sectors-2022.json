@@ -1,0 +1,170 @@
+{
+  "datasetId": "nisr-phc5-nyarugenge-sectors-2022",
+  "title": "Resident population by sector and area of residence",
+  "referencePeriod": "2022 census",
+  "geography": {
+    "name": "Nyarugenge",
+    "level": "Sector"
+  },
+  "sourceDocument": {
+    "title": "The Fifth Rwanda Population and Housing Census, District Profile: Nyarugenge",
+    "publicationDate": "September 2023",
+    "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
+    "tables": [
+      "Table 1.2, printed p. 5 / PDF p. 17",
+      "Table 1.3, printed p. 6 / PDF p. 18"
+    ]
+  },
+  "units": {
+    "population": "residents",
+    "shares": "percent",
+    "area": "inhabitants per square kilometre"
+  },
+  "rows": [
+    {
+      "sector": "Gitega",
+      "population": 26668,
+      "male": 13699,
+      "female": 12969,
+      "maleSharePct": 51.4,
+      "femaleSharePct": 48.6,
+      "districtPopulationSharePct": 7.1,
+      "urban": 26668,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Kanyinya",
+      "population": 31026,
+      "male": 15776,
+      "female": 15250,
+      "maleSharePct": 50.8,
+      "femaleSharePct": 49.2,
+      "districtPopulationSharePct": 8.3,
+      "urban": 14437,
+      "rural": 16589,
+      "urbanSharePct": 46.5,
+      "ruralSharePct": 53.5
+    },
+    {
+      "sector": "Kigali",
+      "population": 61499,
+      "male": 32124,
+      "female": 29375,
+      "maleSharePct": 52.2,
+      "femaleSharePct": 47.8,
+      "districtPopulationSharePct": 16.4,
+      "urban": 44185,
+      "rural": 17314,
+      "urbanSharePct": 71.8,
+      "ruralSharePct": 28.2
+    },
+    {
+      "sector": "Kimisagara",
+      "population": 56534,
+      "male": 28905,
+      "female": 27629,
+      "maleSharePct": 51.1,
+      "femaleSharePct": 48.9,
+      "districtPopulationSharePct": 15.1,
+      "urban": 56534,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Mageregere",
+      "population": 59747,
+      "male": 34038,
+      "female": 25709,
+      "maleSharePct": 57.0,
+      "femaleSharePct": 43.0,
+      "districtPopulationSharePct": 16.0,
+      "urban": 35230,
+      "rural": 24517,
+      "urbanSharePct": 59.0,
+      "ruralSharePct": 41.0
+    },
+    {
+      "sector": "Muhima",
+      "population": 22531,
+      "male": 12286,
+      "female": 10245,
+      "maleSharePct": 54.5,
+      "femaleSharePct": 45.5,
+      "districtPopulationSharePct": 6.0,
+      "urban": 22531,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Nyakabanda",
+      "population": 29580,
+      "male": 14752,
+      "female": 14828,
+      "maleSharePct": 49.9,
+      "femaleSharePct": 50.1,
+      "districtPopulationSharePct": 7.9,
+      "urban": 29580,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Nyamirambo",
+      "population": 55315,
+      "male": 27838,
+      "female": 27477,
+      "maleSharePct": 50.3,
+      "femaleSharePct": 49.7,
+      "districtPopulationSharePct": 14.8,
+      "urban": 55315,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Nyarugenge",
+      "population": 16665,
+      "male": 8806,
+      "female": 7859,
+      "maleSharePct": 52.8,
+      "femaleSharePct": 47.2,
+      "districtPopulationSharePct": 4.5,
+      "urban": 16665,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    },
+    {
+      "sector": "Rwezamenyo",
+      "population": 14754,
+      "male": 7556,
+      "female": 7198,
+      "maleSharePct": 51.2,
+      "femaleSharePct": 48.8,
+      "districtPopulationSharePct": 3.9,
+      "urban": 14754,
+      "rural": null,
+      "urbanSharePct": 100.0,
+      "ruralSharePct": null
+    }
+  ],
+  "districtTotals": {
+    "population": 374319,
+    "male": 195780,
+    "female": 178539,
+    "urban": 315899,
+    "rural": 58420
+  },
+  "notes": [
+    "Census observations, not current estimates.",
+    "Sector names and district geography follow the 2022 NISR census profile.",
+    "A dash in the published residence table is preserved as null; it is not silently rewritten as a published numeric zero."
+  ],
+  "retrievedAt": "2026-10-23",
+  "sourceOrganization": "National Institute of Statistics of Rwanda (NISR)",
+  "sourceUrl": "https://statistics.gov.rw/district-statistics/kigali-city"
+}

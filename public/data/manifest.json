@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-23",
   "datasets": [
     {
       "id": "nisr-phc5-nyarugenge-2022",
@@ -10,23 +10,306 @@
       "format": "json",
       "path": "statistics/population-2022.json",
       "sourceName": "National Institute of Statistics of Rwanda (NISR)",
-      "sourceUrl": "https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC5_MainIndicatorsReport_Final.pdf",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
       "referencePeriod": "2022 census",
       "retrievedAt": "2026-10-22",
       "geographicLevel": "District (Nyarugenge)",
       "license": "Publication terms apply; consult NISR",
       "status": "verified",
       "units": "residents",
-      "notes": ["Historical census enumeration, not a current population estimate.", "District totals do not support sector-level mapping.", "Urban and rural residence are published counts."]
+      "notes": [
+        "Historical census enumeration, not a current population estimate.",
+        "District totals do not support sector-level mapping.",
+        "Urban and rural residence are published counts.",
+        "Source table: Table 1.3, resident population by sector and area of residence, printed page 6."
+      ],
+      "publicationDate": "September 2023"
     },
-    {"id":"education","title":"Education indicators","description":"Awaiting a source-verified Nyarugenge dataset with indicator definitions and reference period.","category":"education","format":"json","path":"statistics/education.json","sourceName":"Not yet sourced","referencePeriod":"Not available","geographicLevel":"Not available","status":"unavailable","notes":["Add a cited source and validated data file before publication."]},
-    {"id":"settlement","title":"Settlement and land use","description":"Awaiting a dated, licensed boundary or land-use dataset suitable for public display.","category":"settlement","format":"geojson","path":"geography/settlement.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No settlement polygons are bundled."]},
-    {"id":"economy-finance","title":"Economy and finance indicators","description":"Awaiting source-verified district statistics.","category":"economy-finance","format":"json","path":"statistics/economy-finance.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["Do not infer local values from national statistics."]},
-    {"id":"agriculture","title":"Agriculture indicators","description":"Awaiting source-verified Nyarugenge data.","category":"agriculture","format":"json","path":"statistics/agriculture.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No agricultural values are supplied."]},
-    {"id":"environment","title":"Environment indicators","description":"Awaiting dated environmental measurements and documented geographic coverage.","category":"environment","format":"json","path":"statistics/environment.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No environmental measurements or spatial surfaces are supplied."]},
-    {"id":"administrative-statistics","title":"Administrative boundaries and statistics","description":"Awaiting verified district and subdistrict boundary geometry and identifiers.","category":"administrative-statistics","format":"geojson","path":"geography/administrative-boundaries.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["The basemap is contextual only and is not an official administrative boundary."]},
-    {"id":"vital-statistics","title":"Vital statistics","description":"Awaiting appropriately documented Nyarugenge vital statistics.","category":"vital-statistics","format":"json","path":"statistics/vital-statistics.json","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No local vital statistics are integrated."]},
-    {"id":"facilities","title":"Public facilities","description":"Awaiting verified locations, categories, update date, and terms for publication.","category":"education","format":"geojson","path":"facilities/public-facilities.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No facility points or service capacities are assumed."]},
-    {"id":"roads","title":"Road network","description":"Awaiting a dated and licensed road network suitable for the intended analysis.","category":"settlement","format":"geojson","path":"geography/roads.geojson","sourceName":"Not yet sourced","geographicLevel":"Not available","status":"unavailable","notes":["No travel times or coverage estimates are provided."]}
+    {
+      "id": "education",
+      "title": "Education indicators",
+      "description": "Awaiting a source-verified Nyarugenge dataset with indicator definitions and reference period.",
+      "category": "education",
+      "format": "json",
+      "path": "statistics/education.json",
+      "sourceName": "Not yet sourced",
+      "referencePeriod": "Not available",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "Add a cited source and validated data file before publication."
+      ]
+    },
+    {
+      "id": "settlement",
+      "title": "Settlement and land use",
+      "description": "Awaiting a dated, licensed boundary or land-use dataset suitable for public display.",
+      "category": "settlement",
+      "format": "geojson",
+      "path": "geography/settlement.geojson",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No settlement polygons are bundled."
+      ]
+    },
+    {
+      "id": "economy-finance",
+      "title": "Economy and finance indicators",
+      "description": "Awaiting source-verified district statistics.",
+      "category": "economy-finance",
+      "format": "json",
+      "path": "statistics/economy-finance.json",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "Do not infer local values from national statistics."
+      ]
+    },
+    {
+      "id": "agriculture",
+      "title": "Agriculture indicators",
+      "description": "Awaiting source-verified Nyarugenge data.",
+      "category": "agriculture",
+      "format": "json",
+      "path": "statistics/agriculture.json",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No agricultural values are supplied."
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "Environment indicators",
+      "description": "Awaiting dated environmental measurements and documented geographic coverage.",
+      "category": "environment",
+      "format": "json",
+      "path": "statistics/environment.json",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No environmental measurements or spatial surfaces are supplied."
+      ]
+    },
+    {
+      "id": "administrative-boundaries",
+      "title": "Nyarugenge district boundary candidate",
+      "description": "District boundary candidate dissolved from the NISR village_boundary service. The accessible service metadata does not specify its vintage, and NISR Hub’s separate Village_Boundary_2022 layer was inaccessible during verification.",
+      "category": "administrative-statistics",
+      "format": "geojson",
+      "path": "review-only/nyarugenge-district-nisr-derived.geojson",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "geographicLevel": "District (Nyarugenge)",
+      "status": "pending-review",
+      "notes": [
+        "The accessible NISR village_boundary service returns this geometry and official administrative identifiers, including Nyarugenge district_id 11.",
+        "NISR Hub separately lists a Village_Boundary_2022 service. Its direct REST layer metadata and query returned HTTP 500 on 2026-10-23, so equivalence to this accessible service is not confirmed.",
+        "Derived output is withheld from app map layers until NISR confirms the vintage and reuse terms."
+      ],
+      "sourceUrl": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0",
+      "referencePeriod": "Vintage not stated in accessible service",
+      "retrievedAt": "2026-10-23",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR.",
+      "geometryType": "MultiPolygon",
+      "crs": "EPSG:4326",
+      "dataKind": "unverified derived boundary candidate",
+      "processing": "Union of 350 NISR village polygons; EPSG:32736 metric operation; 2 m topology-preserving simplification; EPSG:4326 web output.",
+      "validationStatus": "Geometry, coverage, district ID 11, and administrative IDs validated. Exact vintage/equivalence and reuse terms remain unresolved.",
+      "processedFilename": "data/processed/pending-review/nyarugenge-district-nisr-derived.geojson",
+      "originalFilename": "NISR village_boundary FeatureServer layer"
+    },
+    {
+      "id": "vital-statistics",
+      "title": "Vital statistics",
+      "description": "Awaiting appropriately documented Nyarugenge vital statistics.",
+      "category": "vital-statistics",
+      "format": "json",
+      "path": "statistics/vital-statistics.json",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No local vital statistics are integrated."
+      ]
+    },
+    {
+      "id": "facilities",
+      "title": "Public facilities",
+      "description": "Awaiting verified locations, categories, update date, and terms for publication.",
+      "category": "education",
+      "format": "geojson",
+      "path": "facilities/public-facilities.geojson",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No facility points or service capacities are assumed."
+      ]
+    },
+    {
+      "id": "roads",
+      "title": "Road network",
+      "description": "Awaiting a dated and licensed road network suitable for the intended analysis.",
+      "category": "settlement",
+      "format": "geojson",
+      "path": "geography/roads.geojson",
+      "sourceName": "Not yet sourced",
+      "geographicLevel": "Not available",
+      "status": "unavailable",
+      "notes": [
+        "No travel times or coverage estimates are provided."
+      ]
+    },
+    {
+      "id": "nyarugenge-sectors-nisr-derived",
+      "title": "Nyarugenge sector boundary candidates",
+      "description": "Ten sector outlines dissolved from the accessible NISR village_boundary service; exact vintage remains unresolved.",
+      "category": "administrative-statistics",
+      "format": "geojson",
+      "path": "review-only/nyarugenge-sectors-nisr-derived.geojson",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0",
+      "referencePeriod": "Vintage not stated in accessible service",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "Sector (Nyarugenge)",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR.",
+      "status": "pending-review",
+      "geometryType": "Polygon",
+      "crs": "EPSG:4326",
+      "dataKind": "unverified derived boundary candidate",
+      "processing": "Dissolved by sector_id in EPSG:32736; 2 m topology-preserving simplification; EPSG:4326 output.",
+      "validationStatus": "Geometry, coverage, district ID 11, and administrative IDs validated. Exact vintage/equivalence and reuse terms remain unresolved.",
+      "notes": [
+        "The accessible NISR village_boundary service returns this geometry and official administrative identifiers, including Nyarugenge district_id 11.",
+        "NISR Hub separately lists a Village_Boundary_2022 service. Its direct REST layer metadata and query returned HTTP 500 on 2026-10-23, so equivalence to this accessible service is not confirmed.",
+        "Derived output is withheld from app map layers until NISR confirms the vintage and reuse terms."
+      ],
+      "processedFilename": "data/processed/pending-review/nyarugenge-sectors-nisr-derived.geojson",
+      "originalFilename": "NISR village_boundary FeatureServer layer"
+    },
+    {
+      "id": "nyarugenge-cells-nisr-derived",
+      "title": "Nyarugenge cell boundary candidates",
+      "description": "47 cell outlines dissolved from the accessible NISR village_boundary service; exact vintage remains unresolved.",
+      "category": "administrative-statistics",
+      "format": "geojson",
+      "path": "review-only/nyarugenge-cells-nisr-derived.geojson",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0",
+      "referencePeriod": "Vintage not stated in accessible service",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "Cell (Nyarugenge)",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR.",
+      "status": "pending-review",
+      "geometryType": "Polygon",
+      "crs": "EPSG:4326",
+      "dataKind": "unverified derived boundary candidate",
+      "processing": "Dissolved by cell_id in EPSG:32736; 2 m topology-preserving simplification; EPSG:4326 output.",
+      "validationStatus": "Geometry, coverage, district ID 11, and administrative IDs validated. Exact vintage/equivalence and reuse terms remain unresolved.",
+      "notes": [
+        "The accessible NISR village_boundary service returns this geometry and official administrative identifiers, including Nyarugenge district_id 11.",
+        "NISR Hub separately lists a Village_Boundary_2022 service. Its direct REST layer metadata and query returned HTTP 500 on 2026-10-23, so equivalence to this accessible service is not confirmed.",
+        "Derived output is withheld from app map layers until NISR confirms the vintage and reuse terms."
+      ],
+      "processedFilename": "data/processed/pending-review/nyarugenge-cells-nisr-derived.geojson",
+      "originalFilename": "NISR village_boundary FeatureServer layer"
+    },
+    {
+      "id": "nisr-phc5-nyarugenge-sectors-2022",
+      "title": "Nyarugenge population by sector and residence, 2022",
+      "description": "Published census population totals by sector, sex, and urban/rural residence.",
+      "category": "population",
+      "format": "json",
+      "path": "statistics/population-sectors-2022.json",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-05/Nyarugenge.pdf",
+      "publicationDate": "September 2023",
+      "referencePeriod": "2022 census",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "Sector (Nyarugenge)",
+      "license": "NISR publication; attribution retained. No separate reuse license stated on attachment page.",
+      "status": "verified",
+      "units": "residents; shares in percent",
+      "dataKind": "observed census data",
+      "validationStatus": "Ten sector rows; population, sex, urban and rural totals reconcile to NISR district table.",
+      "notes": [
+        "Tables 1.2 and 1.3, printed pages 5–6 (PDF pages 17–18).",
+        "A dash in NISR’s residence table is preserved as null."
+      ]
+    },
+    {
+      "id": "nisr-phc4-nyarugenge-sectors-2012",
+      "title": "Nyarugenge population by sector and residence, 2012",
+      "description": "Published 2012 census population totals by sector, sex, density, and urban/rural residence.",
+      "category": "population",
+      "format": "json",
+      "path": "statistics/population-sectors-2012.json",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-06/Nyarugenge_RPHC4_District_Profile.pdf",
+      "referencePeriod": "2012 census",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "Sector (Nyarugenge)",
+      "license": "NISR publication; attribution retained. No separate reuse license stated on attachment page.",
+      "status": "verified",
+      "units": "residents; inhabitants/km²; shares in percent",
+      "dataKind": "observed census data",
+      "validationStatus": "Ten sector rows; totals reconcile to published district table.",
+      "notes": [
+        "Tables 2 and 3, printed pages 3 and 5 (PDF pages 18 and 20).",
+        "Shown as an independent census snapshot; no growth rate calculated because boundary vintage comparability was not documented."
+      ]
+    },
+    {
+      "id": "nisr-nyarugenge-population-projections-2023-2032",
+      "title": "Nyarugenge population projections, 2023–2032",
+      "description": "Projected resident population by year and sex for Nyarugenge District.",
+      "category": "population",
+      "format": "json",
+      "path": "statistics/population-projections-2023-2032.json",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-06/1.1%20Nyarugenge_single_age.xlsx",
+      "referencePeriod": "2023–2032 projections",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "District (Nyarugenge)",
+      "license": "NISR publication; attribution retained. No separate reuse license stated on attachment page.",
+      "status": "verified",
+      "units": "residents",
+      "dataKind": "projection",
+      "validationStatus": "Ten year records; both-sex total equals male plus female in each year.",
+      "notes": [
+        "Extracted from the Nyarugenge worksheet, total row.",
+        "Projected values, not observed census counts."
+      ]
+    },
+    {
+      "id": "nisr-gender-profile-nyarugenge-2022",
+      "title": "Population age groups, marital status and age at first marriage",
+      "description": "Nyarugenge-specific gender tables transcribed from the NISR Gender Statistics Profile; source table, population universe and units are preserved per row.",
+      "category": "population",
+      "format": "csv",
+      "path": "statistics/population-gender-profile-2022.csv",
+      "sourceName": "National Institute of Statistics of Rwanda (NISR)",
+      "sourceUrl": "https://statistics.gov.rw/sites/default/files/2025-08/Gender%20Statistics%20Profile%20Report%20Nyarugenge.pdf",
+      "publicationDate": "2023",
+      "referencePeriod": "2022 census tables",
+      "retrievedAt": "2026-10-23",
+      "geographicLevel": "District (Nyarugenge)",
+      "license": "NISR publication; attribution retained. No separate reuse license stated on attachment page.",
+      "status": "verified",
+      "units": "residents, percent, and years (specified per row)",
+      "dataKind": "observed census data",
+      "validationStatus": "34 machine-extracted table rows; expected district values and table counts checked against PDF text/tables.",
+      "notes": [
+        "Age-group counts and shares: Table 1, printed p. 17 / PDF p. 18; shares are of total district population.",
+        "Marital status percentages: Table 2, printed p. 19 / PDF p. 20; universe is residents aged 12 and above.",
+        "Mean age at first marriage: Table 3, printed p. 19 / PDF p. 20; definition and universe are retained in each row.",
+        "NISR labels report Gender Statistics Profile 2023; source figures refer to the 2022 census."
+      ]
+    }
   ]
 }

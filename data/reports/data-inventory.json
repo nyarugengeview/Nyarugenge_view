@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-10-25T17:26:55.976427+00:00",
+  "district": "Nyarugenge",
+  "boundary_vintage": "Vintage not stated in accessible NISR village_boundary service; NISR Hub-listed Village_Boundary_2022 REST query returned HTTP 500 on 2026-10-23",
+  "sources": [
+    {
+      "name": "NISR Geospatial Open Data Hub",
+      "url": "https://geospatial-open-data-site-nisrgis.hub.arcgis.com/",
+      "access": "Public catalogue page; dataset metadata/download discoverability varies by item."
+    },
+    {
+      "name": "NISR village boundaries (accessible service)",
+      "url": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0",
+      "access": "Public ArcGIS FeatureServer query; pagination implemented; GeoJSON query; max record count 2,000. REST metadata omits vintage/license.",
+      "observed_source_features": 350
+    },
+    {
+      "name": "NISR Village_Boundary_2022 (Hub-listed service)",
+      "url": "https://gis-server.statistics.gov.rw/server/rest/services/Hosted/Village_Boundary_2022/FeatureServer/0",
+      "access": "ArcGIS HTTP 500 on layer metadata and query; unavailable during this run."
+    }
+  ],
+  "other_nisr_rest_service_names_observed": [
+    "country_frame",
+    "Distance_to_main_roads",
+    "Driver_Reporting_Layer",
+    "Food_Basket_data",
+    "Lunch_Availability_Submission",
+    "Open_water",
+    "word_countries"
+  ],
+  "datasets": [
+    {
+      "dataset": "Nyarugenge district boundary candidate (NISR village service)",
+      "status": "Pending Review",
+      "source_url": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0/query",
+      "service_item": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer",
+      "source_count": 350,
+      "output_count": 1,
+      "output_file": "data/processed/pending-review/nyarugenge-district-nisr-derived.geojson",
+      "format": "GeoJSON",
+      "source_crs": "NISR service query returned EPSG:4326; source layer metadata reports Rwanda TM ITRF2005",
+      "output_crs": "EPSG:4326",
+      "geographic_level": "District",
+      "reference_period": "Vintage not stated in accessible NISR village_boundary service; NISR Hub-listed Village_Boundary_2022 REST query returned HTTP 500 on 2026-10-23",
+      "district_id": "11",
+      "processing_method": "Union of the 350 NISR Nyarugenge village polygons; transformed to WGS84 / UTM 36S (EPSG:32736), simplified topologically by 2 m, transformed to WGS84 for web delivery.",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR.",
+      "retrieved_at": "2026-10-25",
+      "validation": {
+        "all_valid": true,
+        "bbox": [
+          29.97751933917436,
+          -2.07570676675609,
+          30.086825314308534,
+          -1.8667734971793595
+        ],
+        "sector_count": 10,
+        "cell_count": 47
+      },
+      "notes": [
+        "NISR source and administrative ID 11 are confirmed, but the accessible service does not state a publication vintage.",
+        "Source query restricted by district name and checked against NISR district_id 11.",
+        "NISR Hub's separately named Village_Boundary_2022 REST metadata/query returned HTTP 500 on 2026-10-23; equivalence and precise vintage remain unresolved. This candidate is kept local and withheld from app map layers pending confirmation."
+      ]
+    },
+    {
+      "dataset": "Nyarugenge sector boundary candidate (NISR village service)",
+      "status": "Pending Review",
+      "source_url": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0/query",
+      "service_item": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer",
+      "source_count": 350,
+      "output_count": 10,
+      "output_file": "data/processed/pending-review/nyarugenge-sectors-nisr-derived.geojson",
+      "format": "GeoJSON",
+      "output_crs": "EPSG:4326",
+      "geographic_level": "Sector",
+      "reference_period": "Vintage not stated in accessible NISR village_boundary service; NISR Hub-listed Village_Boundary_2022 REST query returned HTTP 500 on 2026-10-23",
+      "retrieved_at": "2026-10-25",
+      "processing_method": "Dissolved village polygons by official sector_id in EPSG:32736; 2 m topology-preserving simplification; delivered as EPSG:4326.",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR."
+    },
+    {
+      "dataset": "Nyarugenge cell boundary candidate (NISR village service)",
+      "status": "Pending Review",
+      "source_url": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer/0/query",
+      "service_item": "https://gis-server.statistics.gov.rw/server/rest/services/village_boundary/FeatureServer",
+      "source_count": 350,
+      "output_count": 47,
+      "output_file": "data/processed/pending-review/nyarugenge-cells-nisr-derived.geojson",
+      "format": "GeoJSON",
+      "output_crs": "EPSG:4326",
+      "geographic_level": "Cell",
+      "reference_period": "Vintage not stated in accessible NISR village_boundary service; NISR Hub-listed Village_Boundary_2022 REST query returned HTTP 500 on 2026-10-23",
+      "retrieved_at": "2026-10-25",
+      "processing_method": "Dissolved village polygons by official cell_id in EPSG:32736; 2 m topology-preserving simplification; delivered as EPSG:4326.",
+      "license": "No separate license text found in accessible service metadata; confirm terms with NISR."
+    },
+    {
+      "dataset": "NISR Hub listed Village_Boundary_2022 service",
+      "status": "Unavailable",
+      "source_url": "https://gis-server.statistics.gov.rw/server/rest/services/Hosted/Village_Boundary_2022/FeatureServer/0",
+      "source_count": null,
+      "output_count": null,
+      "output_file": null,
+      "format": "ArcGIS FeatureServer",
+      "retrieved_at": "2026-10-25",
+      "access_error": "ArcGIS REST layer metadata and query returned HTTP 500 on 2026-10-23.",
+      "notes": [
+        "NISR Hub metadata describes 2022 village boundaries adjusted using 2008–2009 RNRA orthophotography.",
+        "This endpoint could not be queried in this run; equivalence with accessible village_boundary service is unconfirmed."
+      ]
+    }
+  ]
+}

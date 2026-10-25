@@ -1,0 +1,28 @@
+{
+  "district": "Nyarugenge",
+  "reviewedAt": "2026-10-25",
+  "reviewer": "User",
+  "reviewType": "Visual geometry review",
+  "decision": "Geometry accepted by user for the generated boundary candidates.",
+  "datasets": [
+    {
+      "id": "nyarugenge-district-nisr-derived",
+      "file": "data/processed/pending-review/nyarugenge-district-nisr-derived.geojson",
+      "featureCount": 1
+    },
+    {
+      "id": "nyarugenge-sectors-nisr-derived",
+      "file": "data/processed/pending-review/nyarugenge-sectors-nisr-derived.geojson",
+      "featureCount": 10
+    },
+    {
+      "id": "nyarugenge-cells-nisr-derived",
+      "file": "data/processed/pending-review/nyarugenge-cells-nisr-derived.geojson",
+      "featureCount": 47
+    }
+  ],
+  "limitations": [
+    "This records the user's geometry review only. It does not establish the source boundary vintage, equivalence with NISR's Hub-listed 2022 service, or permission to redistribute the derived files.",
+    "The datasets remain Pending Review and are not enabled in the website until source vintage and reuse terms are confirmed."
+  ]
+}
